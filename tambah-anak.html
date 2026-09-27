@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SIPANTI</title>
+</head>
+
+<body>
+    <header>
+        <h1>SIPANTI</h1>
+    </header>
+
+    <nav>
+        <a href="homepage.html">Homepage</a>
+        <a href="data-anak.html">Data Anak</a>
+        <a href="tambah-anak.html">Tambah Anak</a>
+    </nav>
+
+    <main>
+        <article>
+            <h2>Tambah Data Anak</h2>
+    
+              <form>
+                <label for="uname_id">Nama Lengkap :</label>
+                    <input 
+                        type="text" 
+                        name="nama_lengkap" 
+                        id="uname_id" 
+                        placeholder="Masukkan nama lengkap">
+                <br>
+
+                <label for="gender_id">Jenis Kelamin :</label>
+                    <select name="jenis_kelamin" id="gender_id">
+                        <option value="Laki-laki">Laki-laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                    </select>
+                <br>
+
+                <label for="foto_anak_id">Foto Anak :</label>
+                    <input 
+                        type="file" 
+                        name="foto_anak" 
+                        id="foto_anak_id">
+                <br>
+
+                <label for="tgl_lahir_id">Tanggal Lahir :</label>
+                    <input 
+                        type="date" 
+                        name="tanggal_lahir" 
+                        id="tgl_lahir_id">
+                <br>
+
+                <label for="status_id">Status :</label>
+                    <select name="status" id="status_id">
+                        <option value="Aktif">Aktif</option>
+                        <option value="Tidak Aktif">Tidak Aktif</option>
+                    </select>
+                <br>
+
+                <label for="pendidikan_id">Pendidikan :</label>
+                    <select name="pendidikan" id="pendidikan_id">
+                        <option value="SD">SD</option>
+                        <option value="SMP">SMP</option>
+                        <option value="SMA">SMA</option>
+                        <option value="Perguruan Tinggi">Perguruan Tinggi</option>
+                    </select>
+                <br>
+
+                <label for="sekolah_id">Sekolah :</label>
+                    <input 
+                        type="text" 
+                        name="sekolah" 
+                        id="sekolah_id" 
+                        placeholder="Masukkan nama sekolah">
+                <br>
+
+                <label for="kelas_id">Kelas :</label>
+                    <input 
+                        type="text" 
+                        name="kelas" 
+                        id="kelas_id" 
+                        placeholder="Masukkan kelas">
+                <br>
+
+                <label for="alamat_id">Alamat :</label>
+                    <textarea 
+                        name="alamat" 
+                        id="alamat_id" 
+                        placeholder="Masukkan alamat"></textarea>
+                <br>
+
+                <input type="submit" value="Tambah Data">
+              </form>
+        </article>  
+    </main>
+
+    <footer>
+        <p>SIPANTI - Panti Asuhan Amal Mulia Qurani</p>
+    </footer>
+
+</body>
+
+</html>
