@@ -16,6 +16,9 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 header h1 {
@@ -105,25 +108,6 @@ article p {
 
 /* DATA ANAK */
 
-body > nav {
-    background-color: white;
-    padding: 15px 60px;
-    border-bottom: 1px solid #E5E7EB;
-    text-align: center;
-}
-
-body > nav a {
-    color: #006B67;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 600;
-    margin: 0 15px;
-}
-
-body > nav a:hover {
-    color: #B58141;
-}
-
 main article table {
     width: 80%;
     margin: 0 auto;
@@ -163,55 +147,55 @@ main article td a:hover {
     color: #B58141;
 }
 
-@media (max-width: 768px) {
+/* TAMBAH ANAK */
 
-    header {
-        padding: 20px;
-    }
-
-    header h1 {
-        font-size: 26px;
-    }
-
-    header nav {
-        gap: 12px;
-    }
-
-    header nav a {
-        font-size: 14px;
-    }
-
-    header nav a:last-child {
-        padding: 8px 15px;
-    }
-
-    main {
-        min-height: 400px;
-        padding: 50px 20px;
-    }
-
-    main h2 {
-        font-size: 30px;
-    }
-
-    article {
-        width: 100%;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-
-    article p {
-        font-size: 14px;
-    }
-
-    footer {
-        padding: 18px;
-    }
-
-    footer p {
-        font-size: 12px;
-    }
+main article form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
 }
 
+main article form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #1F2937;
+    font-size: 14px;
+    font-weight: bold;
+}
 
+main article form input,
+main article form select,
+main article form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #D1D5DB;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+main article form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+main article form input[type="submit"] {
+    display: block;
+    width: auto;
+    margin-left: auto;
+    padding: 10px 20px;
+    background-color: #006B67;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+main article form input[type="submit"]:hover {
+    background-color: #B58141;
+}
 
