@@ -199,3 +199,72 @@ main article form input[type="submit"]:hover {
     background-color: #B58141;
 }
 
+/* DETAIL ANAK */
+
+main article h3 {
+    margin: 15px 0 20px;
+    color: #006B67;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+main article img {
+    display: block;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+}
+
+main article table {
+    width: 100%;
+    margin: 0 auto 25px;
+    border-collapse: collapse;
+    background-color: white;
+    border: 1px solid #E5E7EB;
+}
+
+main article th {
+    background-color: #006B67;
+    color: white;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+main article td {
+    padding: 12px;
+    border-bottom: 1px solid #E5E7EB;
+    color: #1F2937;
+    font-size: 14px;
+    text-align: left;
+}
+
+main article tr:last-child td {
+    border-bottom: none;
+}
+
+main article p {
+    text-align: center;
+}
+
+main article p a {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #006B67;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+main article p a:hover {
+    background-color: #B58141;
+    color: white;
+}
+
+
+
