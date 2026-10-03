@@ -103,5 +103,115 @@ article p {
     text-align: center;
 }
 
+/* DATA ANAK */
+
+body > nav {
+    background-color: white;
+    padding: 15px 60px;
+    border-bottom: 1px solid #E5E7EB;
+    text-align: center;
+}
+
+body > nav a {
+    color: #006B67;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 15px;
+}
+
+body > nav a:hover {
+    color: #B58141;
+}
+
+main article table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: white;
+    border: 1px solid #E5E7EB;
+}
+
+main article th {
+    background-color: #006B67;
+    color: white;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+main article td {
+    padding: 14px;
+    border-bottom: 1px solid #E5E7EB;
+    color: #1F2937;
+    font-size: 14px;
+    text-align: center;
+}
+
+main article tr:hover td {
+    background-color: #F7F9F9;
+}
+
+main article td a {
+    color: #006B67;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main article td a:hover {
+    color: #B58141;
+}
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    header nav {
+        gap: 12px;
+    }
+
+    header nav a {
+        font-size: 14px;
+    }
+
+    header nav a:last-child {
+        padding: 8px 15px;
+    }
+
+    main {
+        min-height: 400px;
+        padding: 50px 20px;
+    }
+
+    main h2 {
+        font-size: 30px;
+    }
+
+    article {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    article p {
+        font-size: 14px;
+    }
+
+    footer {
+        padding: 18px;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+}
+
 
 
