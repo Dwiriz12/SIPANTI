@@ -1,4 +1,7 @@
 /* STYLE UNTUK SEMUA HALAMAN */
+html {
+    background-color: #006B67;
+}
 
 body {
     margin: 0;
@@ -105,6 +108,11 @@ article p {
     text-align: center;
 }
 
+.home-content {
+    width: 100%;
+    text-align: center;
+}
+
 /* DATA ANAK */
 
 main article table {
@@ -151,6 +159,10 @@ main article td a {
 
 main article td a:hover {
     background-color: #B58141;
+}
+
+.data-anak-content {
+    width: 100%;
 }
 
 /* TAMBAH ANAK */
@@ -203,6 +215,10 @@ main article form input[type="submit"] {
 
 main article form input[type="submit"]:hover {
     background-color: #B58141;
+}
+
+.form-content {
+    width: 100%;
 }
 
 /* DETAIL ANAK */
@@ -271,6 +287,11 @@ main article p a:hover {
     background-color: #B58141;
     color: white;
 }
+
+.detail-anak-content {
+    width: 100%;
+}
+
 
 
 @media (max-width: 768px) {
