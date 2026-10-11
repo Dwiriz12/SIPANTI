@@ -111,7 +111,7 @@ header nav a.active:hover {
 
 main {
     flex: 1;
-    padding: 70px 20px;
+    padding: 50px 20px;
     text-align: center;
 }
 
@@ -119,7 +119,7 @@ main h2 {
     max-width: 750px;
     margin: 0 auto 25px;
     color: var(--primary);
-    font-size: 40px;
+    font-size: 32px;
     font-weight: bold;
     line-height: 1.3;
 }
@@ -145,6 +145,23 @@ article p {
 .home-content {
     width: 100%;
     text-align: center;
+}
+
+.logo-panti {
+    width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.statistik-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
 }
 
 /* TABEL UNTUK SEMUA HALAMAN */
