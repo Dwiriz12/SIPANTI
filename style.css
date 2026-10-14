@@ -239,6 +239,99 @@ article p {
     font-size: 13px;
 }
 
+/* DETAIL ANAK */
+
+.detail-page {
+    max-width: 900px;
+    text-align: left;
+}
+
+.detail-head {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.detail-title {
+    margin: 0;
+    max-width: none;
+    color: var(--primary);
+    font-size: 28px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.detail-subtitle {
+    margin: 2px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.detail-profile {
+    margin-bottom: 20px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.detail-photo {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+    border: 4px solid #E2F0EF;
+}
+
+.detail-name {
+    margin: 0 0 8px;
+    color: var(--text);
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.detail-section {
+    margin-bottom: 20px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+}
+
+.detail-section-title {
+    margin: 0 0 18px;
+    padding-left: 12px;
+    border-left: 4px solid var(--primary);
+    color: var(--primary);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.info-label {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.info-value {
+    margin: 0;
+    color: var(--text);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.btn-edit {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+}
+
+.btn-edit:hover,
+.btn-edit:focus {
+    background-color: var(--accent);
+    color: white;
+}
+
 /* TABEL UNTUK SEMUA HALAMAN */
 
 main article table {
@@ -310,8 +403,7 @@ main article p a:hover {
 
 .data-anak-content,
 .home-content,
-.form-content,
-.detail-anak-content {
+.form-content {
     width: 100%;
 }
 
@@ -478,6 +570,19 @@ main article img {
 
     .login-card {
         padding: 25px 18px;
+    }
+
+    .detail-title {
+        font-size: 24px;
+    }
+
+    .detail-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .detail-name {
+        font-size: 22px;
     }
 
     footer {

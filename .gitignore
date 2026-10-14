@@ -1,6 +1,9 @@
 # Materi kuliah
 materi/
 
-# Halaman login & tentang panti
-login-SIPANTI.html
+# Halaman tentang panti
 tentang-SIPANTI.html
+
+# Dashboard (belum selesai)
+dashboard.html
+edit-anak.html
