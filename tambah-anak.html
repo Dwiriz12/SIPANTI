@@ -4,11 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIPANTI</title>
+
+    <title>SIPANTI - Tambah Data Anak</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
     <header>
         <h1>SIPANTI</h1>
 
@@ -16,7 +20,7 @@
             <ul>
                 <li><a href="homepage.html">Homepage</a></li>
                 <li><a href="data-anak.html">Data Anak</a></li>
-                <li><a href="tambah-anak.html">Tambah Anak</a></li>
+                <li><a href="tambah-anak.html" class="active">Tambah Anak</a></li>
             </ul>
         </nav>
     </header>
@@ -24,58 +28,104 @@
     <main>
         <article>
             <div class="form-content">
+
                 <h2>Tambah Data Anak</h2>
 
+                <p class="mb-4">
+                    Silakan isi informasi anak panti asuhan di bawah ini.
+                </p>
+
                 <form>
-                    <label for="uname_id">Nama Lengkap :</label>
-                    <input type="text" name="nama_lengkap" id="uname_id" placeholder="Masukkan nama lengkap">
-                    <br>
 
-                    <label for="gender_id">Jenis Kelamin :</label>
-                    <select name="jenis_kelamin" id="gender_id">
-                        <option value="Laki-laki">Laki-laki</option>
-                        <option value="Perempuan">Perempuan</option>
-                    </select>
-                    <br>
+                    <div class="row g-3">
 
-                    <label for="foto_anak_id">Foto Anak :</label>
-                    <input type="file" name="foto_anak" id="foto_anak_id">
-                    <br>
+                        <div class="col-12 col-md-6">
+                            <label for="uname_id" class="form-label">Nama Lengkap</label>
+                            <input type="text" class="form-control"
+                                name="nama_lengkap" id="uname_id"
+                                placeholder="Masukkan nama lengkap" required>
+                        </div>
 
-                    <label for="tgl_lahir_id">Tanggal Lahir :</label>
-                    <input type="date" name="tanggal_lahir" id="tgl_lahir_id">
-                    <br>
+                        <div class="col-12 col-md-6">
+                            <label for="gender_id" class="form-label">Jenis Kelamin</label>
+                            <select class="form-select"
+                                name="jenis_kelamin" id="gender_id" required>
+                                <option value="" selected disabled>Pilih jenis kelamin</option>
+                                <option value="Laki-laki">Laki-laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                            </select>
+                        </div>
 
-                    <label for="status_id">Status :</label>
-                    <select name="status" id="status_id">
-                        <option value="Aktif">Aktif</option>
-                        <option value="Tidak Aktif">Tidak Aktif</option>
-                    </select>
-                    <br>
+                        <div class="col-12 col-md-6">
+                            <label for="foto_anak_id" class="form-label">Foto Anak</label>
+                            <input type="file" class="form-control"
+                                name="foto_anak" id="foto_anak_id"
+                                accept="image/*">
+                        </div>
 
-                    <label for="pendidikan_id">Pendidikan :</label>
-                    <select name="pendidikan" id="pendidikan_id">
-                        <option value="SD">SD</option>
-                        <option value="SMP">SMP</option>
-                        <option value="SMA">SMA</option>
-                        <option value="Perguruan Tinggi">Perguruan Tinggi</option>
-                    </select>
-                    <br>
+                        <div class="col-12 col-md-6">
+                            <label for="tgl_lahir_id" class="form-label">Tanggal Lahir</label>
+                            <input type="date" class="form-control"
+                                name="tanggal_lahir" id="tgl_lahir_id" required>
+                        </div>
 
-                    <label for="sekolah_id">Sekolah :</label>
-                    <input type="text" name="sekolah" id="sekolah_id" placeholder="Masukkan nama sekolah">
-                    <br>
+                        <div class="col-12 col-md-6">
+                            <label for="status_id" class="form-label">Status</label>
+                            <select class="form-select"
+                                name="status" id="status_id" required>
+                                <option value="" selected disabled>Pilih status</option>
+                                <option value="Aktif">Aktif</option>
+                                <option value="Tidak Aktif">Tidak Aktif</option>
+                            </select>
+                        </div>
 
-                    <label for="kelas_id">Kelas :</label>
-                    <input type="text" name="kelas" id="kelas_id" placeholder="Masukkan kelas">
-                    <br>
+                        <div class="col-12 col-md-6">
+                            <label for="pendidikan_id" class="form-label">Pendidikan</label>
+                            <select class="form-select"
+                                name="pendidikan" id="pendidikan_id" required>
+                                <option value="" selected disabled>Pilih pendidikan</option>
+                                <option value="SD">SD</option>
+                                <option value="SMP">SMP</option>
+                                <option value="SMA">SMA</option>
+                                <option value="Perguruan Tinggi">Perguruan Tinggi</option>
+                            </select>
+                        </div>
 
-                    <label for="alamat_id">Alamat :</label>
-                    <textarea name="alamat" id="alamat_id" placeholder="Masukkan alamat"></textarea>
-                    <br>
+                        <div class="col-12 col-md-6">
+                            <label for="sekolah_id" class="form-label">Sekolah</label>
+                            <input type="text" class="form-control"
+                                name="sekolah" id="sekolah_id"
+                                placeholder="Masukkan nama sekolah">
+                        </div>
 
-                    <input type="submit" value="Tambah Data">
+                        <div class="col-12 col-md-6">
+                            <label for="kelas_id" class="form-label">Kelas</label>
+                            <input type="text" class="form-control"
+                                name="kelas" id="kelas_id"
+                                placeholder="Masukkan kelas">
+                        </div>
+
+                        <div class="col-12">
+                            <label for="alamat_id" class="form-label">Alamat</label>
+                            <textarea class="form-control"
+                                name="alamat" id="alamat_id"
+                                rows="3" placeholder="Masukkan alamat"></textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="d-flex flex-column flex-sm-row justify-content-end gap-2 mt-4">
+                        <a href="data-anak.html" class="btn btn-outline-secondary">
+                            Kembali
+                        </a>
+
+                        <button type="submit" class="btn btn-sipanti">
+                            Tambah Data
+                        </button>
+                    </div>
+
                 </form>
+
             </div>
         </article>
     </main>
