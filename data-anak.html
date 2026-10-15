@@ -13,17 +13,28 @@
 </head>
 
 <body>
-    <header>
-        <h1>SIPANTI</h1>
+    <aside class="sidebar offcanvas offcanvas-start" id="sidebarAdmin" tabindex="-1">
+        <div class="sidebar-brand">
+            <span class="sidebar-logo">SIPANTI</span>
+            <span class="sidebar-sub">Panti Asuhan Amal Mulia Qurani</span>
+        </div>
 
-        <nav>
-            <ul>
-                <li><a href="homepage.html">Homepage</a></li>
-                <li><a href="data-anak.html">Data Anak</a></li>
-                <li><a href="tambah-anak.html">Tambah Anak</a></li>
-            </ul>
-        </nav>
-    </header>
+        <p class="sidebar-label">Menu</p>
+        <ul class="sidebar-menu">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="data-anak.html" class="active">Data Anak</a></li>
+        </ul>
+
+        <div class="sidebar-bottom">
+            <a href="homepage.html">Logout</a>
+        </div>
+    </aside>
+
+    <div class="admin-main">
+        <div class="admin-topbar">
+            <button type="button" class="btn-menu" data-bs-toggle="offcanvas" data-bs-target="#sidebarAdmin" aria-label="Buka menu">&#9776;</button>
+            <span class="admin-topbar-title">SIPANTI</span>
+        </div>
 
     <main class="container my-4 data-anak-page">
 
@@ -156,6 +167,8 @@
     <footer>
         <p>SIPANTI - Panti Asuhan Amal Mulia Qurani</p>
     </footer>
+
+    </div>
 
 </body>
 
