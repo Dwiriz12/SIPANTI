@@ -1,3 +1,6 @@
+Alasan Memilih Bootstrap. Saya memilih Bootstrap karena lebih mudah digunakan untuk membuat tampilan website SIPANTI yang akan dibuild sampai jadi. Bootstrap ini juga sudah menyediakan berbagai macam class yang bisa digunakan untuk membuat tabel, form, tombol, dan tata letak halaman, jadi tidak perlu membuat semuanya dari awal. Selain itu, Bootstrap bisa membantu membuat tampilan website menyesuaikan ukuran layar laptop dan HP. Bootstrap juga bisa digabungkan dengan CSS sendiri, sehingga saya tetap bisa mengatur warna dan tampilan website sesuai dengan desain SIPANTI yang saya ingin kan.
+
+
 SIPANTI
 Sistem Informasi Pengelolaan Panti Asuhan
 
