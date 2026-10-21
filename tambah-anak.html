@@ -47,7 +47,10 @@
                     Silakan isi informasi anak panti asuhan di bawah ini.
                 </p>
 
-                <form>
+                <div class="alert alert-danger mb-3" id="notifError" style="display: none;"></div>
+                <div class="alert alert-success mb-3" id="notifSukses" style="display: none;"></div>
+
+                <form id="formTambahAnak">
 
                     <div class="row g-3">
 
@@ -55,13 +58,13 @@
                             <label for="uname_id" class="form-label">Nama Lengkap</label>
                             <input type="text" class="form-control"
                                 name="nama_lengkap" id="uname_id"
-                                placeholder="Masukkan nama lengkap" required>
+                                placeholder="Masukkan nama lengkap">
                         </div>
 
                         <div class="col-12 col-md-6">
                             <label for="gender_id" class="form-label">Jenis Kelamin</label>
                             <select class="form-select"
-                                name="jenis_kelamin" id="gender_id" required>
+                                name="jenis_kelamin" id="gender_id">
                                 <option value="" selected disabled>Pilih jenis kelamin</option>
                                 <option value="Laki-laki">Laki-laki</option>
                                 <option value="Perempuan">Perempuan</option>
@@ -78,13 +81,13 @@
                         <div class="col-12 col-md-6">
                             <label for="tgl_lahir_id" class="form-label">Tanggal Lahir</label>
                             <input type="date" class="form-control"
-                                name="tanggal_lahir" id="tgl_lahir_id" required>
+                                name="tanggal_lahir" id="tgl_lahir_id">
                         </div>
 
                         <div class="col-12 col-md-6">
                             <label for="status_id" class="form-label">Status</label>
                             <select class="form-select"
-                                name="status" id="status_id" required>
+                                name="status" id="status_id">
                                 <option value="" selected disabled>Pilih status</option>
                                 <option value="Aktif">Aktif</option>
                                 <option value="Tidak Aktif">Tidak Aktif</option>
@@ -94,7 +97,7 @@
                         <div class="col-12 col-md-6">
                             <label for="pendidikan_id" class="form-label">Pendidikan</label>
                             <select class="form-select"
-                                name="pendidikan" id="pendidikan_id" required>
+                                name="pendidikan" id="pendidikan_id">
                                 <option value="" selected disabled>Pilih pendidikan</option>
                                 <option value="SD">SD</option>
                                 <option value="SMP">SMP</option>
@@ -148,6 +151,33 @@
 
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#formTambahAnak").on("submit", function (e) {
+                e.preventDefault();
+
+                $("#notifError").hide();
+                $("#notifSukses").hide();
+
+                const nama = $("#uname_id").val().trim();
+                const jenisKelamin = $("#gender_id").val();
+                const tanggalLahir = $("#tgl_lahir_id").val();
+                const status = $("#status_id").val();
+                const pendidikan = $("#pendidikan_id").val();
+
+                if (nama === "" || jenisKelamin === null || tanggalLahir === "" || status === null || pendidikan === null) {
+                    $("#notifError").text("Lengkapi dulu data wajib: nama, jenis kelamin, tanggal lahir, status, dan pendidikan.");
+                    $("#notifError").fadeIn(300);
+                    return;
+                }
+
+                $("#notifSukses").text("Data \"" + nama + "\" berhasil ditambahkan (dummy, belum tersimpan ke database).");
+                $("#notifSukses").fadeIn(300);
+                $("#formTambahAnak")[0].reset();
+            });
+        });
+    </script>
 </body>
 
 </html>
