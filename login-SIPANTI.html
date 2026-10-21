@@ -46,11 +46,11 @@
                         Silakan masuk untuk mengelola data SIPANTI
                     </p>
 
-                    <form action="data-anak.html">
+                    <form id="formLogin">
 
                         <div class="mb-3">
                             <label for="loginEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="loginEmail" placeholder="nama@email.com" required>
+                            <input type="email" class="form-control" id="loginEmail" placeholder="nama@email.com">
                             <div class="invalid-feedback">
                                 Masukkan email yang valid.
                             </div>
@@ -58,7 +58,7 @@
 
                         <div class="mb-3">
                             <label for="loginPassword" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
+                            <input type="password" class="form-control" id="loginPassword" placeholder="Password">
                             <div class="invalid-feedback">
                                 Password wajib diisi.
                             </div>
@@ -92,6 +92,52 @@
         </p>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#formLogin").on("submit", function (e) {
+                e.preventDefault();
+
+                $("#loginEmail").removeClass("is-invalid");
+                $("#loginPassword").removeClass("is-invalid");
+
+                const email = $("#loginEmail").val().trim();
+                const password = $("#loginPassword").val().trim();
+
+                let valid = true;
+
+                if (!email) {
+                    $("#loginEmail").addClass("is-invalid");
+                    valid = false;
+                }
+
+                if (!password) {
+                    $("#loginPassword").addClass("is-invalid");
+                    valid = false;
+                }
+
+                if (!valid) {
+                    return;
+                }
+
+                if (!email.includes("@")) {
+                    $("#loginEmail").addClass("is-invalid");
+                    return;
+                }
+
+                $("#loginEmail, #loginPassword").prop("disabled", true);
+                $("#formLogin button[type='submit']").prop("disabled", true).text("Memproses...");
+
+                setTimeout(function () {
+                    window.location.href = "data-anak.html";
+                }, 1500);
+            });
+
+            $("#loginEmail, #loginPassword").on("input", function () {
+                $(this).removeClass("is-invalid");
+            });
+        });
+    </script>
 </body>
 
 </html>
