@@ -166,8 +166,26 @@
                 const status = $("#status_id").val();
                 const pendidikan = $("#pendidikan_id").val();
 
-                if (nama === "" || jenisKelamin === null || tanggalLahir === "" || status === null || pendidikan === null) {
-                    $("#notifError").text("Lengkapi dulu data wajib: nama, jenis kelamin, tanggal lahir, status, dan pendidikan.");
+                const kosong = [];
+
+                if (!nama) {
+                    kosong.push("nama lengkap");
+                }
+                if (!jenisKelamin) {
+                    kosong.push("jenis kelamin");
+                }
+                if (!tanggalLahir) {
+                    kosong.push("tanggal lahir");
+                }
+                if (!status) {
+                    kosong.push("status");
+                }
+                if (!pendidikan) {
+                    kosong.push("pendidikan");
+                }
+
+                if (kosong.length > 0) {
+                    $("#notifError").text("Lengkapi dulu: " + kosong.join(", ") + ".");
                     $("#notifError").fadeIn(300);
                     return;
                 }
@@ -175,6 +193,10 @@
                 $("#notifSukses").text("Data \"" + nama + "\" berhasil ditambahkan (dummy, belum tersimpan ke database).");
                 $("#notifSukses").fadeIn(300);
                 $("#formTambahAnak")[0].reset();
+            });
+
+            $("#uname_id, #gender_id, #tgl_lahir_id, #status_id, #pendidikan_id").on("input change", function () {
+                $("#notifError").hide();
             });
         });
     </script>
