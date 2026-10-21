@@ -67,4 +67,26 @@ function renderAnak(data) {
     anakList.innerHTML = html;
 }
 
+function hitungStatistik(data) {
+    let total = 0;
+    let aktif = 0;
+    let alumni = 0;
+
+    for (let i = 0; i < data.length; i++) {
+        total++;
+
+        if (data[i].status === "Aktif") {
+            aktif++;
+        } else if (data[i].status === "Alumni") {
+            alumni++;
+        }
+    }
+
+    document.getElementById("statTotal").textContent = total;
+    document.getElementById("statAktif").textContent = aktif;
+    document.getElementById("statAlumni").textContent = alumni;
+    document.getElementById("dataCount").textContent = "Menampilkan 1-" + total + " dari " + total + " data";
+}
+
 renderAnak(dataAnak);
+hitungStatistik(dataAnak);
