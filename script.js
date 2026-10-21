@@ -57,6 +57,7 @@ function renderAnak(data) {
                     <div class="anak-action d-flex flex-row flex-sm-column align-items-sm-end gap-2">
                         <span class="badge badge-status">${data[i].status}</span>
                         <a href="${data[i].detail}" class="btn btn-outline-secondary">Detail</a>
+                        <button type="button" class="btn btn-outline-danger btn-hapus" data-id="${data[i].id}">Hapus</button>
                     </div>
 
                 </div>
@@ -70,21 +71,21 @@ function renderAnak(data) {
 function hitungStatistik(data) {
     let total = 0;
     let aktif = 0;
-    let alumni = 0;
+    let tidakAktif = 0;
 
     for (let i = 0; i < data.length; i++) {
         total++;
 
         if (data[i].status === "Aktif") {
             aktif++;
-        } else if (data[i].status === "Alumni") {
-            alumni++;
+        } else if (data[i].status === "Tidak Aktif") {
+            tidakAktif++;
         }
     }
 
     document.getElementById("statTotal").textContent = total;
     document.getElementById("statAktif").textContent = aktif;
-    document.getElementById("statAlumni").textContent = alumni;
+    document.getElementById("statTidakAktif").textContent = tidakAktif;
     document.getElementById("dataCount").textContent = "Menampilkan 1-" + total + " dari " + total + " data";
 }
 
@@ -100,8 +101,6 @@ function filterAnak() {
 
         if (statusFilter === "Semua") {
             cocokStatus = true;
-        } else if (statusFilter === "Lainnya") {
-            cocokStatus = dataAnak[i].status !== "Aktif" && dataAnak[i].status !== "Alumni";
         } else {
             cocokStatus = dataAnak[i].status === statusFilter;
         }
@@ -149,3 +148,24 @@ semuaChip.forEach(function (chip) {
 
 renderAnak(dataAnak);
 hitungStatistik(dataAnak);
+
+$("#anakList").on("click", ".btn-hapus", function () {
+    const id = Number($(this).data("id"));
+    const nama = $(this).closest(".anak-card").find(".anak-name").text();
+
+    if (!confirm("Yakin hapus data " + nama + "?")) {
+        return;
+    }
+
+    $(this).closest(".anak-card").fadeOut(300, function () {
+        for (let i = 0; i < dataAnak.length; i++) {
+            if (dataAnak[i].id === id) {
+                dataAnak.splice(i, 1);
+                break;
+            }
+        }
+
+        renderAnak(dataAnak);
+        hitungStatistik(dataAnak);
+    });
+});
