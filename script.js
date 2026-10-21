@@ -88,5 +88,64 @@ function hitungStatistik(data) {
     document.getElementById("dataCount").textContent = "Menampilkan 1-" + total + " dari " + total + " data";
 }
 
+let statusFilter = "Semua";
+let kataKunci = "";
+
+function filterAnak() {
+    const hasil = [];
+
+    for (let i = 0; i < dataAnak.length; i++) {
+        const cocokNama = dataAnak[i].nama.toLowerCase().includes(kataKunci.toLowerCase());
+        let cocokStatus = false;
+
+        if (statusFilter === "Semua") {
+            cocokStatus = true;
+        } else if (statusFilter === "Lainnya") {
+            cocokStatus = dataAnak[i].status !== "Aktif" && dataAnak[i].status !== "Alumni";
+        } else {
+            cocokStatus = dataAnak[i].status === statusFilter;
+        }
+
+        if (cocokNama && cocokStatus) {
+            hasil.push(dataAnak[i]);
+        }
+    }
+
+    renderAnak(hasil);
+
+    const dataCount = document.getElementById("dataCount");
+    if (hasil.length === 0) {
+        dataCount.textContent = "Tidak ada data yang cocok";
+    } else {
+        dataCount.textContent = "Menampilkan 1-" + hasil.length + " dari " + dataAnak.length + " data";
+    }
+}
+
+const inputCari = document.getElementById("inputCari");
+
+inputCari.addEventListener("input", function () {
+    kataKunci = inputCari.value;
+    filterAnak();
+});
+
+document.getElementById("btnCari").addEventListener("click", function () {
+    kataKunci = inputCari.value;
+    filterAnak();
+});
+
+const semuaChip = document.querySelectorAll(".filter-chips .chip");
+
+semuaChip.forEach(function (chip) {
+    chip.addEventListener("click", function () {
+        semuaChip.forEach(function (c) {
+            c.classList.remove("active");
+        });
+
+        chip.classList.add("active");
+        statusFilter = chip.textContent.trim();
+        filterAnak();
+    });
+});
+
 renderAnak(dataAnak);
 hitungStatistik(dataAnak);
